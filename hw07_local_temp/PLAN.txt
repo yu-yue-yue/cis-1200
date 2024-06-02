@@ -1,0 +1,90 @@
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+CIS 1200 HW07 README
+PennKey: ___________
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+
+============
+=: Task 2 :=
+============
+
+- Do you plan on creating any new classes in your design? If so, what classes
+  are you making, what do they store, and what behaviors do they have?
+
+    Maybe we need to make a channel class. It would store info about the users
+    in the channel, the owner of the channel, the channel's privacy, and its name
+    You would be able to add and remove users from the channel, get the owner, name
+    and current users. If the owner was removed from the channel we would want all
+    members to be removed, too.
+
+- How do you plan on storing what users are registered on the server?
+
+    A set. A user can only be registered on the server once, so a set.
+    An integer set (treeset?) This set would be sorted
+
+- How do you plan on keeping track of which user has which user ID, considering
+  the fact that the user's nickname can change over the course of the program?
+
+    A map. A user's ID has to map to its nickname.
+
+- How do you plan on storing what users are in a channel?
+
+    Probably also a set. A user should not be in a channel twice.
+
+- How do you plan on keeping track of which user is the owner of each channel?
+
+    A final variable? An integer probably, because the owner's nickname could
+    change over time.
+
+- Justify your choice of collections (Set, Map, or List) for the
+  collections you use in your design.
+
+    I am using sets mostly because i don't want things to be repeated, and the
+    map utilization i explained. I am not using any lists because i do not care
+    about the ordering of things.
+
+
+============
+=: Task 3 :=
+============
+
+- Did you make any changes to your design while doing this task? Why?
+    Yeah so I figured out that having the users stored in a set and also in a map
+    is redundant, so I only have a map. I also can't store the owner of a channel
+    as a final variable as it has to be initialized during creation.
+
+
+============
+=: Task 4 :=
+============
+
+- Did you make any changes to your design while doing this task? Why?
+    I made my list of channels into a linkedlist, even though I initially had it
+    as a set, since I didn't want a channel to be able to be added twice. However,
+    the channel is a type that I myself created and thus is not comparable, so the
+    treeset implementation didn't work. The linkedlist is fine, though, since a channel
+    is only added once created and so a channel won't be added twice.
+
+
+============
+=: Task 5 :=
+============
+
+- How do you plan on keeping track of which channels are invite-only?
+    as a boolean field in channel class
+
+- Will you make any changes to your work from before in order to make
+  implementing invite-only channels easier?
+  nope :]
+
+
+============
+=: Task 6 :=
+============
+
+- Did you have to make any changes to your design in Task 6? Why?
+    I added the helper findchannel function, since it was repeated a lot in my code.
+
+- If you were to redo this assignment, what changes (if any) would you make in
+  how you designed your code?
+    i might've made channels comparable and used a treeset to store them in set of a
+    linked list
